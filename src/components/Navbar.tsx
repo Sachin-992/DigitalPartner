@@ -21,12 +21,12 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass py-3 shadow-sm' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass-dark py-3 shadow-sm dark:shadow-none border-b border-white/10 dark:border-white/5' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <a href="#" className="text-2xl font-bold font-display tracking-tight text-brand-600">
-              Digital<span className="text-slate-900">Partner</span>
+            <a href="#" className={`text-2xl font-bold font-display tracking-tight transition-colors ${scrolled ? 'text-brand-400' : 'text-brand-500'}`}>
+              Digital<span className={`transition-colors ${scrolled ? 'text-white' : 'text-slate-900 dark:text-white'}`}>Partner</span>
             </a>
           </div>
 
@@ -36,7 +36,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors"
+                className={`text-sm font-medium transition-colors ${scrolled ? 'text-slate-300 hover:text-brand-400' : 'text-slate-600 dark:text-slate-300 hover:text-brand-500'}`}
               >
                 {link.name}
               </a>
@@ -45,10 +45,10 @@ export default function Navbar() {
               href="https://wa.me/918610964049?text=Hi! I'm interested in building a website for my business."
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary py-2 text-sm"
+              className="btn-primary py-2.5 px-6 text-sm group"
             >
-              <MessageCircle className="w-4 h-4 mr-2" />
-              WhatsApp Us
+              <MessageCircle className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+              Let's Talk
             </a>
           </div>
 
