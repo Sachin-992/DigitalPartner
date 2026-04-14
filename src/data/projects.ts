@@ -20,6 +20,63 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'monitoring-dashboard',
+    title: 'Wise Ultima',
+    category: 'Monitoring Dashboard',
+    tagline: 'Real-time Analytics & System Monitoring',
+    problem: 'Enterprises lacked a unified view to monitor distributed systems, leading to delayed incident response.',
+    solution: 'A real-time monitoring dashboard with custom widget builders and anomaly detection capabilities.',
+    description: 'An enterprise-grade monitoring dashboard that provides real-time insights, customizable widgets, and predictive alerts for complex distributed systems.',
+    features: [
+      'Real-time Data Visualization',
+      'Predictive Anomaly Detection',
+      'Custom Widget Builder',
+      'Automated Alerting System'
+    ],
+    impact: 'Decreased average incident resolution time by 35% through proactive alerting.',
+    liveUrl: '#',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
+    techStack: ['React', 'TypeScript', 'GraphQL', 'D3.js']
+  },
+  {
+    id: 'ai-app',
+    title: 'NeuralGen',
+    category: 'AI-Based App',
+    tagline: 'Generative AI for Creative Workflows',
+    problem: 'Designers spent too much time on repetitive tasks, leaving less room for core creative exploration.',
+    solution: 'An AI-powered application that generates design variations, color palettes, and copy suggestions instantly.',
+    description: 'A generative AI tool designed to assist creative professionals by automating repetitive design variations and content generation.',
+    features: [
+      'AI-driven Design Variations',
+      'Automated Copywriting',
+      'Smart Color Palette Generator',
+      'One-click Asset Export'
+    ],
+    impact: 'Accelerated creative workflows by 50% for top agency partners.',
+    liveUrl: '#',
+    imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
+    techStack: ['React', 'Python', 'OpenAI API', 'Tailwind']
+  },
+  {
+    id: 'skillcheck',
+    title: 'SkillCheck',
+    category: 'Full-Stack Platform',
+    tagline: 'Comprehensive Tech Skill Assessments',
+    problem: 'Tech recruiters struggled to accurately evaluate coding skills through static resumes.',
+    solution: 'A scalable full-stack platform providing live coding environments, automated scoring, and technical interviews.',
+    description: 'A robust technical assessment platform offering live coding environments and automated evaluation to help recruiters find top talent.',
+    features: [
+      'Live Coding Environment',
+      'Automated Code Evaluation',
+      'Video Interview Integration',
+      'Detailed Candidate Reports'
+    ],
+    impact: 'Helped companies hire 200+ engineers with a 95% retention rate.',
+    liveUrl: '#',
+    imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200',
+    techStack: ['Next.js', 'Node.js', 'Docker', 'PostgreSQL']
+  },
+  {
     id: 'scrollkurai',
     title: 'ScrollKurai',
     category: 'SaaS / Productivity',

@@ -39,15 +39,69 @@
 
 @layer components {
   .glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/20;
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)];
+  }
+  .glass-dark {
+    @apply bg-slate-900/40 backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-full bg-brand-600 text-white font-semibold transition-all hover:bg-brand-700 hover:scale-105 active:scale-95 shadow-lg shadow-brand-600/20;
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold transition-all hover:from-brand-400 hover:to-brand-500 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_30px_rgba(34,197,94,0.6)];
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-slate-900 font-semibold border border-slate-200 transition-all hover:bg-slate-50 hover:scale-105 active:scale-95 shadow-sm;
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-white/5 text-slate-900 dark:text-white font-semibold border border-slate-200/20 dark:border-white/10 backdrop-blur-md transition-all hover:bg-white/10 hover:scale-105 active:scale-95 shadow-sm hover:shadow-md;
   }
   .section-padding {
-    @apply py-8 md:py-16;
+    @apply py-16 md:py-32;
+  }
+  .heading-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-brand-800 to-slate-900 dark:from-white dark:via-brand-400 dark:to-white;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(34,197,94,0.15)];
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+  }
+  .glow-effect {
+    box-shadow: 0 0 40px -10px var(--color-brand-500);
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .translate-z-12 {
+    transform: translateZ(48px);
+  }
+  .translate-z-24 {
+    transform: translateZ(96px);
+  }
+  .translate-z-32 {
+    transform: translateZ(128px);
+  }
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+  .-rotate-y-12 {
+    transform: rotateY(-12deg);
+  }
+  .rotate-x-45 {
+    transform: rotateX(45deg);
+  }
+  .rotate-y-45 {
+    transform: rotateY(45deg);
+  }
+  .-rotate-x-45 {
+    transform: rotateX(-45deg);
+  }
+  .-rotate-y-45 {
+    transform: rotateY(-45deg);
   }
 }

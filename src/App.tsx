@@ -149,75 +149,105 @@ export default function App() {
         <Section 
           id="services"
           title="Our Services"
-          subtitle="Everything you need to establish and grow your digital presence. We provide end-to-end solutions from design to deployment."
-          className="bg-slate-50/50"
+          subtitle="Everything you need to establish and grow your digital presence. We provide end-to-end solutions designed to solve your core business challenges."
+          className="bg-slate-50/50 dark:bg-slate-900/50"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
             <ServiceCard 
               title="Business Websites"
-              description="Professional, fast-loading websites for local shops, clinics, and service providers."
+              problem="Your business is invisible online, making it hard for local customers to find you."
+              solution="We build high-performance, SEO-optimized websites that serve as a 24/7 digital storefront."
+              result="Increased local visibility, more inbound inquiries, and a professional brand image."
               icon={Globe}
-              features={[
-                "Mobile Responsive Design",
-                "SEO Optimized Structure",
-                "Contact Form Integration",
-                "Google Maps Setup",
-                "Fast 3-Day Delivery"
-              ]}
               delay={0.1}
             />
             <ServiceCard 
               title="Mobile Apps"
-              description="Custom Android and iOS apps to engage your customers and streamline operations."
+              problem="Customer retention is low because you rely solely on social media or web traffic."
+              solution="Custom Android & iOS apps with push notifications and seamless user experiences."
+              result="Direct access to your customers, higher engagement, and improved loyalty."
               icon={Smartphone}
-              features={[
-                "Cross-Platform (iOS & Android)",
-                "User-Friendly Interface",
-                "Push Notifications",
-                "Offline Functionality",
-                "App Store Submission"
-              ]}
               delay={0.2}
             />
             <ServiceCard 
-              title="Creator Portfolios"
-              description="Stunning personal websites for Instagram influencers and YouTube creators."
-              icon={User}
-              features={[
-                "Social Media Integration",
-                "Video/Gallery Showcase",
-                "Brand Collaboration Form",
-                "Media Kit Download",
-                "Personal Branding"
-              ]}
+              title="E-Commerce Setup"
+              problem="Managing orders manually is chaotic and you are losing sales to larger competitors."
+              solution="Fully integrated online stores with automated inventory, payments, and WhatsApp ordering."
+              result="Streamlined sales process, reduced manual errors, and increased revenue."
+              icon={ShoppingBag}
               delay={0.3}
             />
             <ServiceCard 
-              title="E-commerce Starter"
-              description="Simple online stores to help you start selling your products directly to customers."
-              icon={ShoppingBag}
-              features={[
-                "Product Catalog Management",
-                "Secure Payment Gateway",
-                "Order Tracking System",
-                "Inventory Alerts",
-                "WhatsApp Ordering"
-              ]}
+              title="Custom Software"
+              problem="Inefficient manual processes and fragmented tools are slowing down your operations."
+              solution="Tailored web applications and dashboards designed specifically for your workflow."
+              result="Automated processes, saved time, and scalable architecture for future growth."
+              icon={Layout}
               delay={0.4}
             />
           </div>
         </Section>
 
+        {/* Tech Stack Showcase */}
+        <Section
+          title="Our Tech Stack"
+          subtitle="We build with modern, scalable, and secure technologies."
+          className="bg-slate-900 text-white overflow-hidden py-24"
+        >
+          <div className="relative flex overflow-x-hidden group">
+            <motion.div
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 20, ease: "linear", repeat: Infinity }}
+              className="flex whitespace-nowrap gap-16 items-center w-[200%]"
+            >
+              {[
+                "React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion", "PostgreSQL", "MongoDB", "Docker", "AWS",
+                "React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion", "PostgreSQL", "MongoDB", "Docker", "AWS"
+              ].map((tech, idx) => (
+                <div key={idx} className="flex items-center gap-3 glass-dark px-8 py-4 rounded-full border border-white/10 shrink-0 hover:scale-105 hover:bg-white/10 transition-all cursor-default">
+                  <div className="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></div>
+                  <span className="text-lg font-bold text-slate-300">{tech}</span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </Section>
+
+        {/* Stats/Counters */}
+        <div className="relative z-20 -mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="glass-dark sm:bg-white sm:dark:bg-slate-900 rounded-3xl p-8 sm:p-12 border border-white/10 sm:border-slate-200 sm:dark:border-white/10 shadow-2xl grid grid-cols-2 md:grid-cols-4 gap-8 text-center backdrop-blur-xl">
+            {[
+              { label: "Projects Completed", value: "50+", delay: 0.1 },
+              { label: "Happy Clients", value: "35+", delay: 0.2 },
+              { label: "Years Experience", value: "4+", delay: 0.3 },
+              { label: "Client Retention", value: "95%", delay: 0.4 }
+            ].map((stat, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: stat.delay }}
+                className="flex flex-col gap-2"
+              >
+                <span className="text-4xl md:text-5xl font-display font-bold heading-gradient text-glow">{stat.value}</span>
+                <span className="text-slate-400 sm:text-slate-500 sm:dark:text-slate-400 text-sm font-medium uppercase tracking-wider">{stat.label}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
         {/* How We Work */}
         <Section 
           title="Our Simple Process"
           subtitle="From initial idea to a live digital product in 4 easy steps."
+          className="pt-32"
         >
           <div className="relative">
             {/* Connecting Line (Desktop) */}
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-slate-100 -translate-y-1/2 z-0" />
+            <div className="hidden lg:block absolute top-12 left-24 right-24 h-0.5 bg-gradient-to-r from-brand-100 via-brand-500/50 to-brand-100 dark:from-slate-800 dark:via-brand-500/30 dark:to-slate-800 z-0" />
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
               {[
                 {
                   step: '01',
@@ -246,17 +276,23 @@ export default function App() {
               ].map((item, idx) => (
                 <motion.div
                   key={item.step}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="flex flex-col items-center text-center p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all"
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
+                  className="flex flex-col items-center text-center group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold mb-6 shadow-lg shadow-brand-600/20">
-                    {item.step}
+                  <div className="relative mb-8">
+                    <div className="absolute inset-0 bg-brand-500 blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500 rounded-full"></div>
+                    <div className="w-24 h-24 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center relative z-10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl">
+                      <item.icon className="w-10 h-10 text-brand-500 group-hover:text-brand-600 transition-colors" />
+                    </div>
+                    <div className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-brand-500 text-white flex items-center justify-center font-bold shadow-lg z-20">
+                      {item.step}
+                    </div>
                   </div>
-                  <h4 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h4>
-                  <p className="text-slate-500 text-sm leading-relaxed">{item.description}</p>
+                  <h4 className="text-xl font-display font-bold text-slate-900 dark:text-white mb-3 group-hover:text-brand-500 transition-colors">{item.title}</h4>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -265,71 +301,71 @@ export default function App() {
 
         {/* Why Choose Us */}
         <Section 
-          title="Why Local Businesses Trust Us"
-          subtitle="We are not just a service provider; we are your digital growth partner."
-          className="bg-white relative overflow-hidden"
+          title="Why Choose Me"
+          subtitle="I'm not just a service provider; I'm your dedicated digital growth partner."
+          className="bg-white dark:bg-slate-950 relative overflow-hidden"
         >
           {/* Decorative Background Element */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none -z-10">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-brand-50)_0%,_transparent_70%)] opacity-40" />
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-brand-50)_0%,_transparent_70%)] dark:bg-[radial-gradient(circle_at_center,_rgba(34,197,94,0.05)_0%,_transparent_70%)] opacity-40" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
             {[
               {
-                title: 'Affordable Pricing',
-                description: 'High-quality development at a fraction of the cost of traditional agencies. We believe premium tech should be accessible.',
+                title: 'Premium Quality',
+                description: 'Enterprise-grade development at a fraction of the cost. I build modern, highly-optimized applications that scale.',
                 icon: Zap,
-                className: 'md:col-span-3 lg:col-span-2 bg-brand-50/50 border-brand-100',
-                iconBg: 'bg-brand-100',
-                iconColor: 'text-brand-600'
+                className: 'md:col-span-3 lg:col-span-2 glass dark:glass-dark border-brand-200/50 dark:border-brand-500/20 shadow-[0_0_20px_rgba(34,197,94,0.05)]',
+                iconBg: 'bg-brand-100 dark:bg-brand-500/20',
+                iconColor: 'text-brand-600 dark:text-brand-400'
               },
               {
-                title: 'Fast 3-Day Delivery',
-                description: 'We value your time. Get your basic website live in as little as 72 hours without compromising on quality.',
+                title: 'Lightning Fast Delivery',
+                description: 'I value your time. Get your MVP live in a fraction of the time a traditional agency would take, without compromising on quality.',
                 icon: Clock,
-                className: 'md:col-span-3 lg:col-span-2 bg-slate-50 border-slate-100',
-                iconBg: 'bg-slate-200/50',
-                iconColor: 'text-slate-700'
+                className: 'md:col-span-3 lg:col-span-2 glass dark:glass-dark border-slate-200/50 dark:border-white/5',
+                iconBg: 'bg-slate-100 dark:bg-white/10',
+                iconColor: 'text-slate-700 dark:text-slate-300'
               },
               {
-                title: 'Mobile Optimized',
-                description: 'Every site we build looks and works perfectly on smartphones. Mobile-first is our standard, not an option.',
+                title: 'Modern & Responsive',
+                description: 'Every application I build looks and works perfectly on all devices. Mobile-first design and flawless micro-interactions are standard.',
                 icon: SmartphoneIcon,
-                className: 'md:col-span-3 lg:col-span-2 bg-accent-50/50 border-accent-100',
-                iconBg: 'bg-accent-100',
-                iconColor: 'text-accent-600'
+                className: 'md:col-span-3 lg:col-span-2 glass dark:glass-dark border-accent-200/50 dark:border-accent-500/20',
+                iconBg: 'bg-accent-100 dark:bg-accent-500/20',
+                iconColor: 'text-accent-600 dark:text-accent-400'
               },
               {
-                title: 'Custom Designs',
-                description: 'No generic templates. We build unique designs that reflect your brand identity and resonate with your local audience.',
+                title: 'Custom Architecture',
+                description: 'No generic templates or rigid themes. I build unique architectures and design systems that reflect your brand identity.',
                 icon: Layout,
-                className: 'md:col-span-3 lg:col-span-3 bg-slate-50 border-slate-100',
-                iconBg: 'bg-slate-200/50',
-                iconColor: 'text-slate-700'
+                className: 'md:col-span-3 lg:col-span-3 glass dark:glass-dark border-slate-200/50 dark:border-white/5',
+                iconBg: 'bg-slate-100 dark:bg-white/10',
+                iconColor: 'text-slate-700 dark:text-slate-300'
               },
               {
-                title: 'Ongoing Support',
-                description: 'We are always just a WhatsApp message away. From minor updates to technical help, we are your long-term partners.',
+                title: 'Long-Term Partnership',
+                description: 'I am always just a message away. From feature updates to technical scaling, I act as your dedicated engineering partner.',
                 icon: HeartHandshake,
-                className: 'md:col-span-6 lg:col-span-3 bg-brand-50/50 border-brand-100',
-                iconBg: 'bg-brand-100',
-                iconColor: 'text-brand-600'
+                className: 'md:col-span-6 lg:col-span-3 glass dark:glass-dark border-brand-200/50 dark:border-brand-500/20 shadow-[0_0_20px_rgba(34,197,94,0.05)]',
+                iconBg: 'bg-brand-100 dark:bg-brand-500/20',
+                iconColor: 'text-brand-600 dark:text-brand-400'
               }
             ].map((item, idx) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className={`p-8 rounded-[2rem] border transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group ${item.className}`}
+                transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
+                className={`p-8 rounded-[2rem] border transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group card-hover ${item.className}`}
               >
-                <div className={`w-14 h-14 rounded-2xl ${item.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
-                  <item.icon className={`w-7 h-7 ${item.iconColor}`} />
+                <div className={`w-14 h-14 rounded-2xl ${item.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-sm`}>
+                  <item.icon className={`w-7 h-7 ${item.iconColor} group-hover:drop-shadow-md`} />
                 </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h4>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+                <h3 className="text-xl font-display font-bold text-slate-900 dark:text-white mb-3 group-hover:text-brand-500 transition-colors">{item.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -484,94 +520,137 @@ export default function App() {
           id="about"
           title="About Me"
           subtitle="The journey from a small town to building digital solutions for the world."
+          className="bg-white dark:bg-slate-950"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative max-w-md mx-auto lg:mx-0"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative max-w-md mx-auto lg:mx-0 w-full group"
             >
-              <div className="absolute -inset-4 bg-brand-100 rounded-[3rem] rotate-3 opacity-50" />
-              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-white p-2">
+              {/* Glowing Background Elements */}
+              <div className="absolute -inset-10 bg-gradient-to-r from-brand-500/20 to-emerald-400/20 blur-3xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
+              <div className="absolute -inset-4 bg-gradient-to-tr from-brand-400 to-emerald-300 rounded-[3rem] rotate-3 opacity-20 dark:opacity-40 animate-pulse" />
+
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_0_40px_rgba(34,197,94,0.15)] bg-slate-900 p-1 group-hover:scale-[1.02] transition-transform duration-700">
                 <img 
                   src={bannerImg} 
                   alt="Founder - Software Developer & Entrepreneur" 
                   loading="lazy"
-                  className="w-full h-auto rounded-[2rem] object-cover"
+                  className="w-full h-auto rounded-[2.3rem] object-cover"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute bottom-6 left-6 right-6 p-4 glass rounded-2xl border border-white/40">
-                  <p className="text-slate-900 font-bold text-base">Sachin - Software Developer & Entrepreneur</p>
-                  <p className="text-brand-600 text-xs font-semibold uppercase tracking-wider"> .NET Developer</p>
-                </div>
+
+                {/* Floating Bio Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="absolute bottom-6 left-6 right-6 p-5 glass-dark rounded-2xl border border-white/20 shadow-xl backdrop-blur-xl"
+                >
+                  <p className="text-white font-bold text-lg mb-1 flex items-center gap-2">
+                    Sachin <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
+                  </p>
+                  <p className="text-brand-400 text-xs font-bold uppercase tracking-widest">Full-Stack Developer & Founder</p>
+                </motion.div>
+              </div>
+
+              {/* Social Links - Floating */}
+              <div className="absolute -right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4">
+                {[
+                  { icon: Globe, href: "#", color: "hover:text-blue-500 hover:border-blue-500" },
+                  { icon: User, href: "#", color: "hover:text-indigo-500 hover:border-indigo-500" }
+                ].map((social, idx) => (
+                  <motion.a
+                    key={idx}
+                    href={social.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.6 + (idx * 0.1) }}
+                    className={`w-12 h-12 rounded-full glass dark:glass-dark flex items-center justify-center border border-white/20 text-slate-400 shadow-lg hover:scale-110 transition-all ${social.color}`}
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </motion.a>
+                ))}
               </div>
             </motion.div>
             
             <div className="space-y-8">
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <h3 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6 leading-tight">
-                  Building Digital Trust <br />
-                  <span className="text-brand-600">One Project at a Time</span>
+                <h3 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-6 leading-[1.1]">
+                  Engineering <br />
+                  <span className="heading-gradient text-glow">Digital Excellence</span>
                 </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed text-lg">
-                  I'm a <strong>.NET Software Developer</strong> and <strong>Entrepreneur</strong> from Rayakottai, dedicated to empowering local businesses with high-quality digital tools. My journey from <strong>Government Boys Higher Secondary School</strong> to <strong>SSN College of Engineering</strong> instilled a deep passion for problem-solving.
-                </p>
-                <div className="space-y-4 text-slate-600 leading-relaxed mb-6">
-                  <p>
-                    Despite my background in <strong>Mechanical Engineering</strong>, I found my true calling in software. Today, I bridge the digital divide for shops, clinics, and creators by combining engineering discipline with technical expertise.
+
+                <div className="prose prose-slate dark:prose-invert prose-lg text-slate-600 dark:text-slate-400 max-w-none">
+                  <p className="font-medium text-slate-800 dark:text-slate-200 text-xl mb-6">
+                    I'm a <strong className="text-brand-600 dark:text-brand-400">.NET Software Developer</strong> and Entrepreneur dedicated to building high-performance applications.
+                  </p>
+                  <p className="mb-6 leading-relaxed">
+                    My journey from a small town (Rayakottai) to engineering complex digital solutions has instilled a deep passion for problem-solving. Despite my background in Mechanical Engineering from SSN College of Engineering, I found my true calling in software architecture.
                   </p>
                 </div>
-                <p className="text-slate-600 mb-6 leading-relaxed italic border-l-4 border-brand-500 pl-4">
-                  "I believe technology should be accessible and impactful. Whether building a simple website or a complex app, I bring the same dedication and precision to every project."
-                </p>
+
+                <div className="p-6 my-8 glass dark:glass-dark rounded-2xl border-l-4 border-l-brand-500 italic">
+                  <p className="text-slate-700 dark:text-slate-300 font-medium">
+                    "I believe technology should be accessible, scalable, and impactful. Whether architecting a robust backend or crafting a pixel-perfect UI, I bring engineering precision to every layer of the stack."
+                  </p>
+                </div>
               </motion.div>
 
-              <div className="space-y-6">
-                <h4 className="text-xl font-bold text-slate-900 flex items-center">
-                  <div className="w-8 h-1 bg-brand-500 mr-3 rounded-full" />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="space-y-6"
+              >
+                <h4 className="text-xl font-display font-bold text-slate-900 dark:text-white flex items-center">
+                  <div className="w-8 h-1 bg-gradient-to-r from-brand-500 to-brand-400 mr-4 rounded-full" />
                   Educational Foundation
                 </h4>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="flex items-start p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:border-brand-200 transition-all hover:shadow-md group">
-                    <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mr-4 shrink-0 group-hover:bg-brand-600 transition-colors">
-                      <Store className="w-6 h-6 text-brand-600 group-hover:text-white transition-colors" />
+                  <div className="flex items-start p-5 glass dark:glass-dark border border-slate-200/50 dark:border-white/5 rounded-2xl shadow-sm hover:border-brand-500/30 transition-all hover:-translate-y-1 group">
+                    <div className="w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-500/10 flex items-center justify-center mr-4 shrink-0 group-hover:bg-brand-500 transition-colors">
+                      <Globe className="w-6 h-6 text-brand-600 dark:text-brand-400 group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <h5 className="font-bold text-slate-900 text-sm">Govt Boys Higher Secondary School</h5>
-                      <p className="text-slate-500 text-xs">Rayakottai</p>
-                      <p className="text-slate-400 text-[10px] mt-1 uppercase font-bold tracking-tighter">Schooling</p>
+                      <h5 className="font-bold text-slate-900 dark:text-white text-sm">SSN College of Engineering</h5>
+                      <p className="text-slate-500 dark:text-slate-400 text-xs">Chennai</p>
+                      <p className="text-slate-400 dark:text-slate-500 text-[10px] mt-1 uppercase font-bold tracking-tighter">B.E.Mechanical Engineering</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:border-brand-200 transition-all hover:shadow-md group">
-                    <div className="w-12 h-12 rounded-xl bg-accent-50 flex items-center justify-center mr-4 shrink-0 group-hover:bg-accent-600 transition-colors">
-                      <Globe className="w-6 h-6 text-accent-600 group-hover:text-white transition-colors" />
+                  <div className="flex items-start p-5 glass dark:glass-dark border border-slate-200/50 dark:border-white/5 rounded-2xl shadow-sm hover:border-brand-500/30 transition-all hover:-translate-y-1 group">
+                    <div className="w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-500/10 flex items-center justify-center mr-4 shrink-0 group-hover:bg-brand-500 transition-colors">
+                      <Store className="w-6 h-6 text-brand-600 dark:text-brand-400 group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <h5 className="font-bold text-slate-900 text-sm">SSN College of Engineering</h5>
-                      <p className="text-slate-500 text-xs">Chennai</p>
-                      <p className="text-slate-400 text-[10px] mt-1 uppercase font-bold tracking-tighter">B.E.Mechanical Engineering</p>
+                      <h5 className="font-bold text-slate-900 dark:text-white text-sm">Govt Boys Higher Secondary School</h5>
+                      <p className="text-slate-500 dark:text-slate-400 text-xs">Rayakottai</p>
+                      <p className="text-slate-400 dark:text-slate-500 text-[10px] mt-1 uppercase font-bold tracking-tighter">Schooling</p>
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="flex items-center p-6 bg-slate-900 rounded-2xl text-white shadow-xl shadow-slate-900/10"
+                className="flex items-center p-6 bg-slate-900 rounded-[2rem] text-white shadow-[0_0_30px_rgba(0,0,0,0.15)] border border-white/10"
               >
-                <ShieldCheck className="w-10 h-10 mr-4 shrink-0 text-brand-400" />
+                <ShieldCheck className="w-12 h-12 mr-5 shrink-0 text-brand-400 animate-pulse" />
                 <div>
-                  <h4 className="font-bold">Verified Expertise</h4>
-                  <p className="text-slate-400 text-sm">Committed to delivering secure, scalable, and high-performance software solutions.</p>
+                  <h4 className="font-display font-bold text-xl mb-1">Verified Expertise</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">Committed to delivering secure, scalable, and high-performance software solutions.</p>
                 </div>
               </motion.div>
             </div>
