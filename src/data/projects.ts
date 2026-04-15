@@ -1,7 +1,8 @@
-import { LucideIcon } from 'lucide-react';
-import scrollkuraiImg from '../assets/images/scrollkurai.jpeg';
-import townbasketImg from '../assets/images/townbasket.jpeg';
-import eduquestImg from '../assets/images/eduquest.jpeg';
+import karikingImg from '../assets/images/Kariking.png';
+import townImg from '../assets/images/Town.png';
+import eduImg from '../assets/images/edu.png';
+import educoreImg from '../assets/images/educore.png';
+import pkmImg from '../assets/images/PKM.png';
 
 export interface Project {
   id: string;
@@ -20,117 +21,119 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'monitoring-dashboard',
-    title: 'Wise Ultima',
-    category: 'Monitoring Dashboard',
-    tagline: 'Real-time Analytics & System Monitoring',
-    problem: 'Enterprises lacked a unified view to monitor distributed systems, leading to delayed incident response.',
-    solution: 'A real-time monitoring dashboard with custom widget builders and anomaly detection capabilities.',
-    description: 'An enterprise-grade monitoring dashboard that provides real-time insights, customizable widgets, and predictive alerts for complex distributed systems.',
+    id: 'kariking-website',
+    title: 'Kariking Website',
+    category: 'Business Website',
+    tagline: 'Modern Brand Presence for Customer Engagement',
+    problem: 'The brand needed a polished digital presence to communicate services clearly and build trust with potential customers.',
+    solution: 'A responsive marketing website was crafted with strong branding, clear service storytelling, and conversion-focused page sections.',
+    description: 'A modern business website built to showcase brand identity, services, and customer engagement with a clean, responsive UI.',
     features: [
-      'Real-time Data Visualization',
-      'Predictive Anomaly Detection',
-      'Custom Widget Builder',
-      'Automated Alerting System'
+      'Responsive Landing Pages',
+      'Service Showcase',
+      'Brand-First UI Design',
+      'Lead Generation Sections'
     ],
-    impact: 'Decreased average incident resolution time by 35% through proactive alerting.',
-    liveUrl: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
-    techStack: ['React', 'TypeScript', 'GraphQL', 'D3.js']
+    impact: 'Improved brand presentation, strengthened customer trust, and made service discovery faster across devices.',
+    liveUrl: 'https://kariking.vercel.app/',
+    imageUrl: karikingImg,
+    techStack: ['React', 'Tailwind', 'TypeScript', 'Responsive UI']
   },
   {
-    id: 'ai-app',
-    title: 'NeuralGen',
-    category: 'AI-Based App',
-    tagline: 'Generative AI for Creative Workflows',
-    problem: 'Designers spent too much time on repetitive tasks, leaving less room for core creative exploration.',
-    solution: 'An AI-powered application that generates design variations, color palettes, and copy suggestions instantly.',
-    description: 'A generative AI tool designed to assist creative professionals by automating repetitive design variations and content generation.',
+    id: 'kariking-web-app',
+    title: 'Kariking Web App',
+    category: 'Business Operations Platform',
+    tagline: 'Operational Control for Orders, Admin, and Customer Workflows',
+    problem: 'Managing orders, customer interactions, and internal admin workflows manually created friction and slowed business operations.',
+    solution: 'A centralized web application was developed to streamline admin tasks, customer activity, and order management in one place.',
+    description: 'A full-featured web application designed to manage business operations, including customer interactions, orders, and admin workflows.',
     features: [
-      'AI-driven Design Variations',
-      'Automated Copywriting',
-      'Smart Color Palette Generator',
-      'One-click Asset Export'
+      'Admin Workflow Management',
+      'Customer Interaction Tracking',
+      'Order Processing',
+      'Operational Dashboards'
     ],
-    impact: 'Accelerated creative workflows by 50% for top agency partners.',
-    liveUrl: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
-    techStack: ['React', 'Python', 'OpenAI API', 'Tailwind']
-  },
-  {
-    id: 'skillcheck',
-    title: 'SkillCheck',
-    category: 'Full-Stack Platform',
-    tagline: 'Comprehensive Tech Skill Assessments',
-    problem: 'Tech recruiters struggled to accurately evaluate coding skills through static resumes.',
-    solution: 'A scalable full-stack platform providing live coding environments, automated scoring, and technical interviews.',
-    description: 'A robust technical assessment platform offering live coding environments and automated evaluation to help recruiters find top talent.',
-    features: [
-      'Live Coding Environment',
-      'Automated Code Evaluation',
-      'Video Interview Integration',
-      'Detailed Candidate Reports'
-    ],
-    impact: 'Helped companies hire 200+ engineers with a 95% retention rate.',
-    liveUrl: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200',
-    techStack: ['Next.js', 'Node.js', 'Docker', 'PostgreSQL']
-  },
-  {
-    id: 'scrollkurai',
-    title: 'ScrollKurai',
-    category: 'SaaS / Productivity',
-    tagline: 'Streamlining Content Workflows for Modern Teams',
-    problem: 'Content creators and marketing teams often struggle with fragmented tools, leading to inefficient asset management and delayed publishing cycles.',
-    solution: 'We built a unified SaaS ecosystem that centralizes content creation, digital asset management, and team collaboration into a single, high-performance dashboard.',
-    description: 'A SaaS platform designed to streamline content workflows, improve productivity, and manage digital assets in one unified system for creators and teams.',
-    features: [
-      'Unified Digital Asset Management',
-      'Real-time Team Collaboration',
-      'Automated Content Scheduling',
-      'Advanced Performance Analytics'
-    ],
-    impact: 'Reduced content production time by 40% and eliminated tool-switching fatigue for creative teams.',
-    liveUrl: 'https://app.scrollkurai.in/auth',
-    imageUrl: scrollkuraiImg,
-    techStack: ['.NET', 'React', 'PostgreSQL', 'Azure']
+    impact: 'Increased operational efficiency, reduced manual coordination, and improved visibility across core business workflows.',
+    liveUrl: 'https://app.kariking.in/',
+    imageUrl: karikingImg,
+    techStack: ['ASP.NET Core', '.NET', 'SQL Server', 'REST API']
   },
   {
     id: 'townbasket',
     title: 'Townbasket',
-    category: 'Local E-commerce',
-    tagline: 'Digital Transformation for Hyperlocal Retailers',
-    problem: 'Small-scale grocery stores lacked the digital infrastructure to compete with e-commerce giants, resulting in lost local revenue and customer churn.',
-    solution: 'A mobile-first hyperlocal platform that enables local stores to manage inventory, accept digital payments, and receive orders directly via WhatsApp and a dedicated web interface.',
-    description: 'A hyperlocal grocery ordering platform that enables small stores to sell online, manage inventory, and receive orders directly through a mobile-first experience.',
+    category: 'Hyperlocal E-commerce',
+    tagline: 'Helping Small Retailers Sell Digitally with Confidence',
+    problem: 'Local grocery retailers needed a practical way to manage inventory and receive online orders without relying on complex systems.',
+    solution: 'A hyperlocal commerce platform was built to digitize product listings, inventory flow, and customer ordering for neighborhood stores.',
+    description: 'A hyperlocal grocery ordering platform that enables small retailers to go digital, manage inventory, and receive orders efficiently.',
     features: [
-      'Hyperlocal Delivery Tracking',
-      'Real-time Inventory Sync',
-      'WhatsApp Order Integration',
-      'Secure Multi-gateway Payments'
+      'Inventory Management',
+      'Order Handling',
+      'Retailer Dashboard',
+      'Digital Storefront Experience'
     ],
-    impact: 'Empowered 50+ local retailers to go digital, resulting in an average 25% increase in monthly revenue.',
+    impact: 'Improved order efficiency, simplified retail operations, and helped local sellers expand their digital reach.',
     liveUrl: 'https://townbasket.scrollkurai.in/',
-    imageUrl: townbasketImg,
-    techStack: ['.NET', 'React', 'SQL Server', 'Redis']
+    imageUrl: townImg,
+    techStack: ['.NET', 'React', 'SQL Server', 'Tailwind']
   },
   {
-    id: 'eduquest',
-    title: 'EduQuest',
-    category: 'EdTech Platform',
-    tagline: 'Interactive Learning Reimagined for Engagement',
-    problem: 'Traditional educational platforms often suffer from low engagement rates and a lack of actionable data for tracking student progress.',
-    solution: 'An interactive EdTech platform delivering structured learning modules, gamified assessments, and deep performance analytics to personalize the student journey.',
-    description: 'An interactive EdTech platform that delivers structured learning, assessments, and performance tracking for students through a modern and engaging UI.',
+    id: 'educore',
+    title: 'Educore',
+    category: 'Learning Management Platform',
+    tagline: 'Structured Course Delivery and Progress Tracking',
+    problem: 'Educational teams needed a centralized system to organize courses, monitor learners, and manage assessments efficiently.',
+    solution: 'A structured learning platform was created to unify course management, progress monitoring, and academic workflows.',
+    description: 'A structured learning platform for managing courses, student progress, and assessments in a centralized system.',
     features: [
-      'Interactive Course Modules',
-      'Automated Assessment Engine',
-      'Real-time Progress Dashboard',
-      'Student Performance Analytics'
+      'Course Management',
+      'Student Progress Tracking',
+      'Assessment Workflows',
+      'Centralized Admin Control'
     ],
-    impact: 'Boosted student engagement by 60% and provided educators with data-driven insights to improve learning outcomes.',
-    liveUrl: 'https://eduquest-teal.vercel.app/',
-    imageUrl: eduquestImg,
-    techStack: ['React', 'Node.js', 'MongoDB', 'Tailwind']
+    impact: 'Made academic operations more organized, improved learning visibility, and reduced overhead in course administration.',
+    liveUrl: 'https://educoreomegabalan.vercel.app/',
+    imageUrl: educoreImg,
+    techStack: ['Blazor WebAssembly', 'MudBlazor', 'ASP.NET Core', 'SQL Server']
+  },
+  {
+    id: 'edu-quest',
+    title: 'Edu Quest',
+    category: 'EdTech Platform',
+    tagline: 'Interactive Learning with Assessment and Performance Insights',
+    problem: 'Students and educators needed a more engaging platform for learning journeys, assessments, and outcome tracking.',
+    solution: 'An interactive EdTech experience was built to combine learning modules, assessments, and performance insights in one product.',
+    description: 'An interactive EdTech platform that delivers engaging learning experiences, assessments, and performance tracking.',
+    features: [
+      'Interactive Learning Modules',
+      'Assessment Engine',
+      'Progress Analytics',
+      'Performance Tracking'
+    ],
+    impact: 'Enhanced learner engagement, improved visibility into progress, and supported more effective academic decision-making.',
+    liveUrl: 'https://eduquest-21.vercel.app/',
+    imageUrl: eduImg,
+    techStack: ['React', 'MongoDB', 'Tailwind', 'REST API']
+  },
+  {
+    id: 'pkm-tours-travels-website',
+    title: 'PKM Tours & Travels Website',
+    category: 'Travel Booking Website',
+    tagline: 'Travel Services Showcase with Booking-Focused UX',
+    problem: 'The travel business needed a modern online presence to showcase services, build credibility, and help customers book trips easily.',
+    solution: 'A branded travel website was designed to highlight services, fleet offerings, and booking pathways with a polished user experience.',
+    description: 'A professional travel booking website designed to showcase travel services, fleet details, and enable customers to book trips easily with a modern UI and strong branding.',
+    features: [
+      'Travel Service Pages',
+      'Fleet Showcase',
+      'Booking Inquiry Flow',
+      'Modern Branded UI'
+    ],
+    impact: 'Improved service visibility, made trip inquiries easier, and delivered a more trustworthy digital experience for travelers.',
+    liveUrl: 'https://pkm-tours-travels.lovable.app/',
+    imageUrl: pkmImg,
+    techStack: ['HTML', 'CSS', 'JavaScript', 'Responsive UI']
   }
 ];
+
+

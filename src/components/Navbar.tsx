@@ -21,22 +21,21 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass-dark py-3 shadow-sm dark:shadow-none border-b border-white/10 dark:border-white/5' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-slate-950/88 py-3 shadow-[0_10px_30px_rgba(15,23,42,0.35)] border-b border-white/10 backdrop-blur-xl' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#" className={`text-2xl font-bold font-display tracking-tight transition-colors ${scrolled ? 'text-brand-400' : 'text-brand-500'}`}>
-              Digital<span className={`transition-colors ${scrolled ? 'text-white' : 'text-slate-900 dark:text-white'}`}>Partner</span>
+              Digital<span className={`transition-colors ${scrolled ? 'text-white' : 'text-slate-100'}`}>Partner</span>
             </a>
           </div>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${scrolled ? 'text-slate-300 hover:text-brand-400' : 'text-slate-600 dark:text-slate-300 hover:text-brand-500'}`}
+                className={`text-sm font-medium transition-colors ${scrolled ? 'text-slate-200 hover:text-white' : 'text-slate-300 hover:text-white'}`}
               >
                 {link.name}
               </a>
@@ -52,11 +51,10 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 hover:text-brand-600 transition-colors"
+              className="text-slate-200 hover:text-white transition-colors"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -64,14 +62,13 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-slate-100 overflow-hidden"
+            className="md:hidden bg-slate-950/95 border-t border-white/10 overflow-hidden backdrop-blur-xl"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {NAV_LINKS.map((link) => (
@@ -79,7 +76,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-4 text-base font-medium text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-lg transition-all"
+                  className="block px-3 py-4 text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 rounded-lg transition-all"
                 >
                   {link.name}
                 </a>

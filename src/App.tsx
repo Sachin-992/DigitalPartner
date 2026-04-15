@@ -201,12 +201,14 @@ export default function App() {
               className="flex whitespace-nowrap gap-16 items-center w-[200%]"
             >
               {[
-                "React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion", "PostgreSQL", "MongoDB", "Docker", "AWS",
-                "React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion", "PostgreSQL", "MongoDB", "Docker", "AWS"
+                "React", "Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "MongoDB", "Docker", "AWS",
+                "ASP.NET Core", "Blazor WebAssembly", "MudBlazor", "HTML", "CSS", "JavaScript", "MongoDB", "Supabase", "REST API Development", "Git & GitHub",
+                "React", "Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "MongoDB", "Docker", "AWS",
+                "ASP.NET Core", "Blazor WebAssembly", "MudBlazor", "HTML", "CSS", "JavaScript", "MongoDB", "Supabase", "REST API Development", "Git & GitHub"
               ].map((tech, idx) => (
-                <div key={idx} className="flex items-center gap-3 glass-dark px-8 py-4 rounded-full border border-white/10 shrink-0 hover:scale-105 hover:bg-white/10 transition-all cursor-default">
+                <div key={idx} className="flex items-center gap-3 px-8 py-4 rounded-full bg-slate-800 text-white border border-slate-700 shadow-[0_16px_40px_rgba(15,23,42,0.18)] shrink-0 hover:scale-105 hover:bg-slate-700 transition-all cursor-default">
                   <div className="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></div>
-                  <span className="text-lg font-bold text-slate-300">{tech}</span>
+                  <span className="text-lg font-bold text-white">{tech}</span>
                 </div>
               ))}
             </motion.div>
@@ -215,11 +217,11 @@ export default function App() {
 
         {/* Stats/Counters */}
         <div className="relative z-20 -mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass-dark sm:bg-white sm:dark:bg-slate-900 rounded-3xl p-8 sm:p-12 border border-white/10 sm:border-slate-200 sm:dark:border-white/10 shadow-2xl grid grid-cols-2 md:grid-cols-4 gap-8 text-center backdrop-blur-xl">
+          <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-[0_28px_60px_rgba(15,23,42,0.12)] grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { label: "Projects Completed", value: "50+", delay: 0.1 },
-              { label: "Happy Clients", value: "35+", delay: 0.2 },
-              { label: "Years Experience", value: "4+", delay: 0.3 },
+              { label: "Projects Completed", value: "9", delay: 0.1 },
+              { label: "Happy Clients", value: "5+", delay: 0.2 },
+              { label: "Years Experience", value: "1+", delay: 0.3 },
               { label: "Client Retention", value: "95%", delay: 0.4 }
             ].map((stat, idx) => (
               <motion.div
@@ -230,8 +232,8 @@ export default function App() {
                 transition={{ duration: 0.5, delay: stat.delay }}
                 className="flex flex-col gap-2"
               >
-                <span className="text-4xl md:text-5xl font-display font-bold heading-gradient text-glow">{stat.value}</span>
-                <span className="text-slate-400 sm:text-slate-500 sm:dark:text-slate-400 text-sm font-medium uppercase tracking-wider">{stat.label}</span>
+                <span className="text-4xl md:text-5xl font-display font-bold text-brand-600">{stat.value}</span>
+                <span className="text-slate-600 text-sm font-semibold uppercase tracking-[0.18em]">{stat.label}</span>
               </motion.div>
             ))}
           </div>
@@ -239,6 +241,7 @@ export default function App() {
 
         {/* How We Work */}
         <Section 
+          id="process"
           title="Our Simple Process"
           subtitle="From initial idea to a live digital product in 4 easy steps."
           className="pt-32"
@@ -586,7 +589,7 @@ export default function App() {
               >
                 <h3 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-6 leading-[1.1]">
                   Engineering <br />
-                  <span className="heading-gradient text-glow">Digital Excellence</span>
+                  <span className="bg-gradient-to-r from-brand-600 via-brand-500 to-emerald-500 bg-clip-text text-transparent">Digital Excellence</span>
                 </h3>
 
                 <div className="prose prose-slate dark:prose-invert prose-lg text-slate-600 dark:text-slate-400 max-w-none">
@@ -657,6 +660,70 @@ export default function App() {
           </div>
         </Section>
 
+        <Section
+          id="privacy"
+          title="Privacy"
+          subtitle="A simple summary of how we handle your information."
+          className="bg-slate-50/60"
+        >
+          <div className="max-w-4xl mx-auto grid gap-6">
+            {[
+              {
+                title: 'What we collect',
+                text: 'We may collect your name, phone number, email address, and project details when you contact us.'
+              },
+              {
+                title: 'Why we collect it',
+                text: 'We use this information to reply to you, discuss your project, and provide our services.'
+              },
+              {
+                title: 'How we use it',
+                text: 'Your information is only used for communication, project work, and support. We do not sell your data.'
+              },
+              {
+                title: 'Your control',
+                text: 'If you want your contact details or messages removed, you can contact us anytime and request deletion.'
+              }
+            ].map((item) => (
+              <div key={item.title} className="rounded-[2rem] bg-white border border-slate-200 p-6 sm:p-8 shadow-sm">
+                <h3 className="text-xl font-display font-bold text-slate-900 mb-3">{item.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section
+          id="terms"
+          title="Terms"
+          subtitle="A simple summary of how this website and our services are used."
+        >
+          <div className="max-w-4xl mx-auto grid gap-6">
+            {[
+              {
+                title: 'Website use',
+                text: 'The content on this website is for general information about our services and projects.'
+              },
+              {
+                title: 'Project work',
+                text: 'Project scope, timelines, pricing, and delivery are confirmed separately when we start working together.'
+              },
+              {
+                title: 'Content and images',
+                text: 'The work shown in this portfolio is for showcasing our experience and should not be copied without permission.'
+              },
+              {
+                title: 'Contact and support',
+                text: 'If you contact us through WhatsApp, phone, or email, we will respond based on availability and project requirements.'
+              }
+            ].map((item) => (
+              <div key={item.title} className="rounded-[2rem] bg-white border border-slate-200 p-6 sm:p-8 shadow-sm">
+                <h3 className="text-xl font-display font-bold text-slate-900 mb-3">{item.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
         <CTABanner />
       </main>
 
@@ -665,3 +732,9 @@ export default function App() {
     </div>
   );
 }
+
+
+
+
+
+
